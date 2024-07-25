@@ -10,7 +10,10 @@
     "release": "standard-version",
     "test": "jest --coverage"
   },
-  "repository": "https://github.com/pixelfed/react-native-stories.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelfed/react-native-stories.git"
+  },
   "keywords": [
     "pixelfed",
     "react-native",
