@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
-import { WIDTH } from '../../core/constants';
+import { StyleSheet } from 'react-native'
+import { WIDTH } from '../../core/constants'
 
-export default StyleSheet.create( {
+export default StyleSheet.create({
   container: {
     borderRadius: 8,
     overflow: 'hidden',
@@ -14,4 +14,4 @@ export default StyleSheet.create( {
     bottom: 0,
     right: 0,
   },
-} );
+})

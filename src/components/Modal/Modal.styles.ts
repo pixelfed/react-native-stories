@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
-import { HEIGHT, WIDTH } from '../../core/constants';
+import { StyleSheet } from 'react-native'
+import { HEIGHT, WIDTH } from '../../core/constants'
 
-export default StyleSheet.create( {
+export default StyleSheet.create({
   container: {
     flex: 1,
   },
@@ -13,4 +13,4 @@ export default StyleSheet.create( {
     height: HEIGHT,
   },
   bgAnimation: StyleSheet.absoluteFillObject,
-} );
+})

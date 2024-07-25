@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
-export default StyleSheet.create( {
+export default StyleSheet.create({
   container: StyleSheet.absoluteFillObject,
   absolute: {
     position: 'absolute',
@@ -10,4 +10,4 @@ export default StyleSheet.create( {
   cube: {
     justifyContent: 'center',
   },
-} );
+})

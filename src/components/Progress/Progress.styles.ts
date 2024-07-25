@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
-export default StyleSheet.create( {
+export default StyleSheet.create({
   container: {
     position: 'absolute',
     top: 16,
@@ -14,4 +14,4 @@ export default StyleSheet.create( {
     borderRadius: 8,
     overflow: 'hidden',
   },
-} );
+})

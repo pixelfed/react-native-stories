@@ -1,42 +1,41 @@
-import React, {
-  FC, memo, useRef, useState,
-} from 'react';
-import { LayoutChangeEvent } from 'react-native';
-import { runOnJS, useAnimatedReaction } from 'react-native-reanimated';
-import { StoryVideoProps } from '../../core/dto/componentsDTO';
-import { WIDTH } from '../../core/constants';
+import React, { type FC, memo, useRef, useState } from 'react'
+import type { LayoutChangeEvent } from 'react-native'
+import { runOnJS, useAnimatedReaction } from 'react-native-reanimated'
+import type { StoryVideoProps } from '../../core/dto/componentsDTO'
+import { WIDTH } from '../../core/constants'
 
-const StoryVideo: FC<StoryVideoProps> = ( {
-  source, paused, isActive, onLoad, onLayout, ...props
-} ) => {
-
+const StoryVideo: FC<StoryVideoProps> = ({
+  source,
+  paused,
+  isActive,
+  onLoad,
+  onLayout,
+  ...props
+}) => {
   try {
-
     // eslint-disable-next-line global-require
-    const Video = require( 'react-native-video' ).default;
+    const Video = require('react-native-video').default
 
-    const ref = useRef<any>( null );
+    const ref = useRef<any>(null)
 
-    const [ pausedValue, setPausedValue ] = useState( paused.value );
+    const [pausedValue, setPausedValue] = useState(paused.value)
 
     const start = () => {
-
-      ref.current?.seek( 0 );
-      ref.current?.resume?.();
-
-    };
+      ref.current?.seek(0)
+      ref.current?.resume?.()
+    }
 
     useAnimatedReaction(
       () => paused.value,
-      ( res, prev ) => res !== prev && runOnJS( setPausedValue )( res ),
-      [ paused.value ],
-    );
+      (res, prev) => res !== prev && runOnJS(setPausedValue)(res),
+      [paused.value]
+    )
 
     useAnimatedReaction(
       () => isActive.value,
-      ( res ) => res && runOnJS( start )(),
-      [ isActive.value ],
-    );
+      (res) => res && runOnJS(start)(),
+      [isActive.value]
+    )
 
     return (
       <Video
@@ -47,17 +46,13 @@ const StoryVideo: FC<StoryVideoProps> = ( {
         paused={pausedValue}
         controls={false}
         repeat={false}
-        onLoad={( { duration }: { duration: number } ) => onLoad( duration * 1000 )}
-        onLayout={( e: LayoutChangeEvent ) => onLayout( e.nativeEvent.layout.height )}
+        onLoad={({ duration }: { duration: number }) => onLoad(duration * 1000)}
+        onLayout={(e: LayoutChangeEvent) => onLayout(e.nativeEvent.layout.height)}
       />
-    );
-
-  } catch ( error ) {
-
-    return null;
-
+    )
+  } catch (error) {
+    return null
   }
+}
 
-};
-
-export default memo( StoryVideo );
+export default memo(StoryVideo)

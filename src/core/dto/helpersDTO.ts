@@ -1,3 +1,3 @@
 export interface ProgressStorageProps {
-  [key: string]: string;
+  [key: string]: string
 }
