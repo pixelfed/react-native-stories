@@ -30,6 +30,7 @@ import {
 } from '../../core/constants'
 import StoryModal from '../Modal'
 import type { StoryModalPublicMethods } from '../../core/dto/componentsDTO'
+import { YStack, Text } from 'tamagui'
 
 const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStoriesProps>(
   (
@@ -214,20 +215,30 @@ const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStor
             {data.map(
               (story) =>
                 story.renderAvatar?.() ??
-                ((story.avatarSource || story.avatar) && (
-                  <StoryAvatar
-                    {...story}
-                    loadingStory={loadingStory}
-                    seenStories={seenStories}
-                    onPress={() => onPress(story.id)}
-                    colors={avatarBorderColors}
-                    seenColors={avatarSeenBorderColors}
-                    size={avatarSize}
-                    showName={showName}
-                    nameTextStyle={nameTextStyle}
-                    nameTextProps={nameTextProps}
-                    key={`avatar${story.id}`}
-                  />
+                ((story.avatarSource || story.imgUrl) && (
+                  <YStack justifyContent="center" alignItems="center" gap="$1.5">
+                    <StoryAvatar
+                      {...story}
+                      loadingStory={loadingStory}
+                      seenStories={seenStories}
+                      onPress={() => onPress(story.id)}
+                      colors={avatarBorderColors}
+                      seenColors={avatarSeenBorderColors}
+                      size={avatarSize}
+                      showName={showName}
+                      nameTextStyle={nameTextStyle}
+                      nameTextProps={nameTextProps}
+                      key={`avatar${story.id}`}
+                    />
+                    <Text
+                      fontSize="$1"
+                      fontFamily={'system'}
+                      fontWeight="500"
+                      allowFontScaling={false}
+                    >
+                      {story.name}
+                    </Text>
+                  </YStack>
                 ))
             )}
           </ScrollView>

@@ -1,5 +1,6 @@
 import React, { type FC, memo } from 'react'
-import { View, Text, Image, TouchableOpacity, Pressable } from 'react-native'
+import { View, Image, TouchableOpacity, Pressable } from 'react-native'
+import { Text } from 'tamagui'
 import { WIDTH } from '../../core/constants'
 import HeaderStyles from './Header.styles'
 import type { StoryHeaderProps } from '../../core/dto/componentsDTO'
@@ -47,7 +48,11 @@ const StoryHeader: FC<StoryHeaderProps> = ({
             <Image source={avatarSource ?? { uri: avatar }} style={styles} />
           </View>
         )}
-        {Boolean(name) && <Text style={textStyle}>{name}</Text>}
+        {Boolean(name) && (
+          <Text style={textStyle} color="white" fontWeight={'bold'}>
+            {name}
+          </Text>
+        )}
       </Pressable>
       <TouchableOpacity onPress={onClose} hitSlop={16} testID="storyCloseButton">
         <Close color={closeColor} />
