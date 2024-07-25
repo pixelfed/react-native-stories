@@ -8,6 +8,7 @@
     "prepare": "husky install",
     "build": "tsc -p tsconfig.json",
     "release": "standard-version",
+    "lint": "npx @biomejs/biome check --write ./src",
     "test": "jest --coverage"
   },
   "repository": {
