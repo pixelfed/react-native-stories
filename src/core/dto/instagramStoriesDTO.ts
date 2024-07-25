@@ -23,7 +23,7 @@ export interface InstagramStoryProps {
   /**
     * @deprecated Use {@link avatarSource} instead (set avatarSource to {uri: 'your url'}).
   */
-  imgUrl?: string;
+  avatar?: string;
   avatarSource?: ImageProps['source'];
   renderAvatar?: () => ReactNode;
   renderStoryHeader?: () => ReactNode;

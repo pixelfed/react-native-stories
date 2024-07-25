@@ -15,7 +15,7 @@ const AnimatedImage = Animated.createAnimatedComponent( Image );
 const StoryAvatar: FC<StoryAvatarProps> = ( {
   id,
   avatarSource,
-  imgUrl,
+  avatar,
   name,
   stories,
   loadingStory,
@@ -53,7 +53,7 @@ const StoryAvatar: FC<StoryAvatarProps> = ( {
         <TouchableOpacity activeOpacity={0.6} onPress={onPress} testID={`${id}StoryAvatar${stories.length}Story`}>
           <Loader loading={isLoading} color={loaderColor} size={size + AVATAR_OFFSET * 2} />
           <AnimatedImage
-            source={avatarSource ?? { uri: imgUrl }}
+            source={avatarSource ?? { uri: avatar }}
             style={[
               AvatarStyles.avatar,
               imageAnimatedStyles,

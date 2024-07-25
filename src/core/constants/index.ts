@@ -2,7 +2,7 @@ import { Dimensions } from 'react-native';
 
 export const { width: WIDTH, height: HEIGHT } = Dimensions.get( 'window' );
 
-export const STORAGE_KEY = '@birdwingo/react-native-instagram-stories';
+export const STORAGE_KEY = '@pixelfed/react-native-stories';
 
 export const DEFAULT_COLORS = [ '#F7B801', '#F18701', '#F35B04', '#F5301E', '#C81D4E', '#8F1D4E' ];
 export const LOADER_COLORS = [ '#FFF' ];

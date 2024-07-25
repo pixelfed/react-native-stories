@@ -111,7 +111,7 @@ export interface StoryProgressItemProps extends Omit<StoryProgressProps, 'length
 
 export interface StoryHeaderProps {
   avatarSource?: ImageProps['source'];
-  imgUrl?: string;
+  avatar?: string;
   name?: string;
   avatarSize: number;
   textStyle?: TextStyle;

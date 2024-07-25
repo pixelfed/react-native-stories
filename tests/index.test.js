@@ -31,7 +31,7 @@ jest.spyOn( Storage, 'setProgressStorage' ).mockImplementation( () => ( {} ) );
 const stories = [ {
   id: '1',
   name: 'John Doe',
-  imgUrl: 'https://picsum.photos/200/300',
+  avatar: 'https://picsum.photos/200/300',
   stories: [ {
     id: '1',
     sourceUrl: 'https://picsum.photos/200/300',
@@ -42,7 +42,7 @@ const stories = [ {
 const stories2 = [ {
   id: '1',
   name: 'John Doe',
-  imgUrl: 'https://picsum.photos/200/300',
+  avatar: 'https://picsum.photos/200/300',
   stories: [ {
     id: '1',
     sourceUrl: 'https://picsum.photos/200/300',
@@ -50,7 +50,7 @@ const stories2 = [ {
 }, {
   id: '2',
   name: 'John Doe 2',
-  imgUrl: 'https://picsum.photos/200/300',
+  avatar: 'https://picsum.photos/200/300',
   stories: [ {
     id: '1',
     sourceUrl: 'https://picsum.photos/200/300',
@@ -60,7 +60,7 @@ const stories2 = [ {
 const stories3 = [ {
   id: '1',
   name: 'John Doe',
-  imgUrl: 'https://picsum.photos/200/300',
+  avatar: 'https://picsum.photos/200/300',
   stories: [ {
     id: '1',
     sourceUrl: 'https://picsum.photos/200/300',
@@ -73,7 +73,7 @@ const stories3 = [ {
 const stories4 = [ {
   id: '1',
   name: 'John Doe',
-  imgUrl: 'https://picsum.photos/200/300',
+  avatar: 'https://picsum.photos/200/300',
   stories: [ {
     id: '1',
     sourceUrl: 'https://picsum.photos/200/300',
@@ -82,7 +82,7 @@ const stories4 = [ {
 }, {
   id: '2',
   name: 'John Doe 2',
-  imgUrl: 'https://picsum.photos/200/300',
+  avatar: 'https://picsum.photos/200/300',
   stories: [ {
     id: '1',
     sourceUrl: 'https://picsum.photos/200/300',
@@ -214,7 +214,7 @@ describe( 'Instagram Stories test', () => {
       ref.current.spliceStories( [ {
         id: '2',
         name: 'John Doe 2',
-        imgUrl: 'https://picsum.photos/200/300',
+        avatar: 'https://picsum.photos/200/300',
         stories: [ {
           id: '1',
           sourceUrl: 'https://picsum.photos/200/300',
@@ -226,7 +226,7 @@ describe( 'Instagram Stories test', () => {
       ref.current.spliceStories( [ {
         id: '3',
         name: 'John Doe 3',
-        imgUrl: 'https://picsum.photos/200/300',
+        avatar: 'https://picsum.photos/200/300',
         stories: [ {
           id: '1',
           sourceUrl: 'https://picsum.photos/200/300',
@@ -462,7 +462,7 @@ describe( 'Instagram Stories test', () => {
     render( <InstagramStories stories={[ {
       id: '1',
       name: 'John Doe',
-      imgUrl: 'https://picsum.photos/200/300',
+      avatar: 'https://picsum.photos/200/300',
       stories: [],
     } ]} /> );
 
