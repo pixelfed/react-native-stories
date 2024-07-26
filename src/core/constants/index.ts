@@ -17,7 +17,7 @@ export const SEEN_LOADER_COLORS = ['#2A2A2C']
 export const PROGRESS_COLOR = '#00000099'
 export const PROGRESS_ACTIVE_COLOR = '#FFFFFF'
 export const BACKGROUND_COLOR = '#000000'
-export const CLOSE_COLOR = '#00000099'
+export const CLOSE_COLOR = '#FFFFFF'
 
 export const LOADER_ID = 'gradient'
 export const LOADER_URL = `url(#${LOADER_ID})`

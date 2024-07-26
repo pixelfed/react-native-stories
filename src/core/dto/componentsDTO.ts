@@ -94,6 +94,7 @@ export interface StoryImageProps {
   imageStyles?: ImageStyle
   imageProps?: ImageProps
   videoDuration?: number
+  createdAt?: string
   onImageLayout: (height: number) => void
   onLoad: (duration?: number) => void
 }
@@ -117,6 +118,8 @@ export interface StoryHeaderProps {
   avatarSource?: ImageProps['source']
   avatar?: string
   name?: string
+  duration?: number
+  createdAt?: string
   avatarSize: number
   textStyle?: TextStyle
   closeColor: string

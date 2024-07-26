@@ -215,8 +215,13 @@ const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStor
             {data.map(
               (story) =>
                 story.renderAvatar?.() ??
-                ((story.avatarSource || story.imgUrl) && (
-                  <YStack justifyContent="center" alignItems="center" gap="$1.5">
+                ((story.avatarSource || story.avatar) && (
+                  <YStack
+                    key={`avatar${story.id}`}
+                    justifyContent="center"
+                    alignItems="center"
+                    gap="$1.5"
+                  >
                     <StoryAvatar
                       {...story}
                       loadingStory={loadingStory}
@@ -228,7 +233,6 @@ const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStor
                       showName={showName}
                       nameTextStyle={nameTextStyle}
                       nameTextProps={nameTextProps}
-                      key={`avatar${story.id}`}
                     />
                     <Text
                       fontSize="$1"

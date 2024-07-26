@@ -1,15 +1,18 @@
 import React, { type FC, memo } from 'react'
 import { View, Image, TouchableOpacity, Pressable } from 'react-native'
-import { Text } from 'tamagui'
+import { Text, XStack } from 'tamagui'
 import { WIDTH } from '../../core/constants'
 import HeaderStyles from './Header.styles'
 import type { StoryHeaderProps } from '../../core/dto/componentsDTO'
 import Close from '../Icon/close'
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg'
 
 const StoryHeader: FC<StoryHeaderProps> = ({
   avatarSource,
   avatar,
   name,
+  duration,
+  createdAt,
   onClose,
   avatarSize,
   textStyle,
@@ -48,11 +51,18 @@ const StoryHeader: FC<StoryHeaderProps> = ({
             <Image source={avatarSource ?? { uri: avatar }} style={styles} />
           </View>
         )}
-        {Boolean(name) && (
-          <Text style={textStyle} color="white" fontWeight={'bold'}>
-            {name}
-          </Text>
-        )}
+        <XStack flexGrow={1} justifyContent="space-between">
+          {Boolean(name) && (
+            <Text style={textStyle} color="white" fontWeight={'bold'}>
+              {name}
+            </Text>
+          )}
+          {Boolean(createdAt) && (
+            <Text style={textStyle} color="white" fontWeight={'bold'} mr="$3">
+              {createdAt}
+            </Text>
+          )}
+        </XStack>
       </Pressable>
       <TouchableOpacity onPress={onClose} hitSlop={16} testID="storyCloseButton">
         <Close color={closeColor} />

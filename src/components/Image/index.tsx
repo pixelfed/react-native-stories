@@ -12,6 +12,7 @@ import { HEIGHT, LOADER_COLORS, WIDTH } from '../../core/constants'
 import ImageStyles from './Image.styles'
 import StoryVideo from './video'
 import type { StoryItemProps } from '~/core/dto/instagramStoriesDTO'
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg'
 
 const StoryImage: FC<StoryImageProps> = ({
   stories,
@@ -101,6 +102,19 @@ const StoryImage: FC<StoryImageProps> = ({
         <Loader loading={loading} color={color} size={50} />
       </View>
       <View style={[ImageStyles.image, mediaContainerStyle]}>
+        <Svg
+          height={100}
+          width="100%"
+          style={{ position: 'absolute', zIndex: 3, top: 0 }}
+        >
+          <Defs>
+            <LinearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <Stop offset="0%" stopColor="black" stopOpacity="0.8" />
+              <Stop offset="100%" stopColor="black" stopOpacity="0" />
+            </LinearGradient>
+          </Defs>
+          <Rect x="0" y="0" width="100%" height={100} fill="url(#grad)" />
+        </Svg>
         {(data.data?.source || data.data?.sourceUrl) &&
           (data.isVideo ? (
             <StoryVideo

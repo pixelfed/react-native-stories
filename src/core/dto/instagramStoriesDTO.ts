@@ -16,6 +16,8 @@ export interface StoryItemProps {
   sourceUrl?: string
   source: ImageProps['source']
   mediaType?: 'image' | 'video'
+  duration?: number
+  createdAt?: string
   animationDuration?: number
   renderContent?: () => ReactNode
   renderFooter?: () => ReactNode
