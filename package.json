@@ -1,7 +1,7 @@
 {
   "name": "@pixelfed/react-native-stories",
-  "version": "1.0.1",
-  "description": "A versatile and captivating React Native component that empowers developers to seamlessly integrate Instagram-style stories into their mobile applications, fostering an engaging and interactive user experience.",
+  "version": "1.2.0",
+  "description": "A versatile and captivating React Native component that empowers developers to seamlessly integrate ephemeral stories into their mobile applications, fostering an engaging and interactive user experience.",
   "main": "src/index.tsx",
   "source": "src/index.tsx",
   "scripts": {
@@ -25,10 +25,7 @@
     "reanimated",
     "animated",
     "animation",
-    "performance",
     "stories",
-    "instagram",
-    "instagram-stories",
     "story"
   ],
   "author": "",
