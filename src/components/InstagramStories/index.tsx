@@ -30,7 +30,7 @@ import {
 } from '../../core/constants'
 import StoryModal from '../Modal'
 import type { StoryModalPublicMethods } from '../../core/dto/componentsDTO'
-import { YStack, Text } from 'tamagui'
+import { YStack, Text, useTheme } from 'tamagui'
 
 const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStoriesProps>(
   (
@@ -60,6 +60,7 @@ const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStor
     ref
   ) => {
     const [data, setData] = useState(stories)
+    const theme = useTheme()
 
     const seenStories = useSharedValue<ProgressStorageProps>({})
     const loadedStories = useSharedValue(false)
@@ -235,10 +236,12 @@ const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStor
                       nameTextProps={nameTextProps}
                     />
                     <Text
+                      {...nameTextProps}
                       fontSize="$1"
                       fontFamily={'system'}
                       fontWeight="500"
                       allowFontScaling={false}
+                      style={[{color: theme.color?.val.default.val}, nameTextStyle]}
                     >
                       {story.name}
                     </Text>
