@@ -5,12 +5,12 @@ export const { width: WIDTH, height: HEIGHT } = Dimensions.get('window')
 export const STORAGE_KEY = '@pixelfed/react-native-stories'
 
 export const DEFAULT_COLORS = [
-  '#64B5F6',  // Light blue
-  '#7986CB',  // Periwinkle blue
-  '#9575CD',  // Light purple
-  '#B39DDB',  // Lavender
-  '#CE93D8',  // Light pink-purple
-  '#F48FB1',  // Light pink
+  '#64B5F6', // Light blue
+  '#7986CB', // Periwinkle blue
+  '#9575CD', // Light purple
+  '#B39DDB', // Lavender
+  '#CE93D8', // Light pink-purple
+  '#F48FB1', // Light pink
 ]
 
 export const LOADER_COLORS = ['#FFF']

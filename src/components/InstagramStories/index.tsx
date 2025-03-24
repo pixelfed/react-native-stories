@@ -241,7 +241,7 @@ const InstagramStories = forwardRef<InstagramStoriesPublicMethods, InstagramStor
                       fontFamily={'system'}
                       fontWeight="500"
                       allowFontScaling={false}
-                      style={[{color: theme.color?.val.default.val}, nameTextStyle]}
+                      style={[{ color: theme.color?.val.default.val }, nameTextStyle]}
                     >
                       {story.name}
                     </Text>
