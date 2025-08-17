@@ -1,4 +1,4 @@
-# @pixelfed/react-native-stories
+# This package is deprecated and no longer maintained
 
 React Native Stories
 
